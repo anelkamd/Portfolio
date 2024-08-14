@@ -959,14 +959,14 @@ if(isset($_POST['connexion'])) {
 
         <section class="contact-form">
 
-          <h3 class="h3 form-title">Contact Form</h3>
+          <h3 class="h3 form-title">Fenetre Administrateur</h3>
 
           <form action="login.php" method="POST" class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="email" name="email" class="form-input" placeholder="Adresse Email" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Adresse Email" id="email" required data-form-input>
           
-              <input type="password" name="password" class="form-input" placeholder="Mot de passe" required data-form-input>
+              <input type="password" name="password" class="form-input" placeholder="Mot de passe" id="password" data-form-input>
             </div>
           
             <button class="form-btn" type="submit" data-form-btn>
@@ -983,7 +983,7 @@ if(isset($_POST['connexion'])) {
     </div>
 
   </main>
-
+   <?php if(!empty($error)){echo'<span style="color:red">'.$error.'</span>';}?>
 
   <!--
     - custom js link
