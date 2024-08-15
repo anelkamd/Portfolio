@@ -231,20 +231,19 @@ if(isset($_POST['connexion'])) {
 
         <section class="about-text">
           <p>
-            Je suis Anelka MD, Designer UI/UX et Developpeur Web , 
-            spécialisé dans le développement web et les médias imprimés. J'aime transformer des 
-            problèmes complexes en designs simples, beaux et intuitifs.
-            Mon travail consiste à créer des sites web fonctionnels et conviviaux tout en étant attrayants.
-             J'ajoute une touche personnelle à vos produits pour les rendre accrocheurs et faciles à utiliser.
-              Mon objectif est de transmettre votre message et votre identité de la manière la plus créative possible.
-            J'ai réalisé des designs web pour de nombreuses marques célèbres.
+            Je suis Anelka MD, Je suis passionné par le développement front-end en tant qu'ingénieur logiciel,
+             avec une préférence particulière pour JavaScript. En tant qu'étudiant à l'ISIG Goma,
+             je développe mes compétences en ingénierie informatique tout en poursuivant mon objectif de devenir entrepreneur.
+            Barcelone joue un rôle particulier dans mon cœur ❤️💙, et en plus de la technologie, 
+            je suis également un passionné d'anime dévoué. Toujours à la quête de nouvelles possibilités d'apprentissage,
+             de création et d'innovation, mon objectif est de convertir des idées en expériences numériques fluides et captivantes.
           </p>
 
           <p>
-            Mon travail consiste à créer votre site web de manière à ce qu'il soit fonctionnel et convivial tout en étant attrayant.
-             De plus, j'ajoute une touche personnelle à votre produit pour m'assurer qu'il soit accrocheur et facile à utiliser.
-              Mon objectif est de transmettre votre message et votre identité de la manière la plus créative possible.
-             J'ai réalisé des designs web pour de nombreuses marques célèbres.
+           Je suis responsable de la création de votre site web de manière à ce qu'il soit à la fois fonctionnel et convivial, tout en étant attractif.
+             En outre, je donne une dimension personnelle à votre produit afin de garantir qu'il soit séduisant et pratique à utiliser.
+              Je souhaite communiquer votre message et votre identité de la façon la plus originale possible.
+             J'ai créé des conceptions web pour plusieurs marques renommées.
           </p>
         </section>
 
