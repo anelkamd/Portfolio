@@ -77,54 +77,49 @@ if (!isset($_SESSION['user'])) {
 }
 
 /* Contenu principal */
-.main-content {
+/* .main-content {
     flex: 1;
     padding: 20px;
     background-color: #ffffff;
     overflow-y: auto;
 }
 
-/* Contenu de la zone principale */
+ Contenu de la zone principale 
 .content-area {
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 </style>
-<body>
 <div id="__next">
-    <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-content">
-                <nav class="nav-links">
-                    <a href="index.php" class="nav-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                        Welcome
-                    </a>
-                    <a href="adduser.php" class="nav-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                        Ajout Utilisateur
-                    </a>
-                    <a href="logout.php" class="nav-item">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                            <polyline points="16 17 21 12 16 7"></polyline>
-                            <line x1="21" y1="12" x2="9" y2="12"></line>
-                        </svg>
-                        Déconnexion
-                    </a>
-                </nav>
-            </div>
-        </div>
-        <div class="main-content">
-            <main class="content-area">
-                <!-- Contenu principal ici -->
-            </main>
-        </div>
+    <div class="navbar">
+        <nav class="nav-links">
+            <a href="index.php" class="nav-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Welcome
+            </a>
+            <a href="adduser.php" class="nav-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Ajout Utilisateur
+            </a>
+            <a href="logout.php" class="nav-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Déconnexion
+            </a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <main class="content-area">
+            <!-- Contenu principal ici -->
+        </main>
     </div>
 </div>
