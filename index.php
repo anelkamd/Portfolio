@@ -944,7 +944,7 @@ if(isset($_POST['connexion'])) {
 
           <h3 class="h3 form-title">Fenetre Administrateur</h3>
 
-          <form action="login.php" method="POST" class="form" data-form>
+          <form method="POST" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="email" name="email" class="form-input" placeholder="Adresse Email" id="email" required data-form-input>
@@ -952,7 +952,7 @@ if(isset($_POST['connexion'])) {
               <input type="password" name="password" class="form-input" placeholder="Mot de passe" id="password" data-form-input>
             </div>
           
-            <button class="form-btn" type="submit" data-form-btn>
+            <button class="form-btn" type="submit" id="connexion" name="connexion" data-form-btn>
               <ion-icon name="log-in"></ion-icon>
               <span>Connexion</span>
             </button>
