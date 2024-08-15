@@ -21,7 +21,76 @@ if (!isset($_SESSION['user'])) {
     <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
 
 </head>
+<style>
+    /* Conteneur principal */
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
 
+/* Barre latérale (sidebar) */
+.sidebar {
+    width: 250px;
+    background-color: #2d3748;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+/* Navigation dans la barre latérale */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #4a5568;
+}
+
+/* Icônes des liens */
+.icon {
+    margin-right: 10px;
+    height: 24px;
+    width: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+/* Contenu de la zone principale */
+.content-area {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+</style>
 <body>
 <div id="__next">
     <div class="container">
