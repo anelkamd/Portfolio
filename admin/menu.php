@@ -104,6 +104,13 @@ if (!isset($_SESSION['user'])) {
                 </svg>
                 Ajout Utilisateur
             </a>
+            <a href="add_project.php" class="nav-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Ajout d'un Projet
+            </a>
             <a href="logout.php" class="nav-item">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>

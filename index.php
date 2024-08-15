@@ -2,50 +2,51 @@
 <?php
 ob_start();
 session_start();
+$sql = $pdo->prepare("SELECT * FROM projects");
+$sql->execute();
+$projects = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['connexion'])) {
-    $error = '';    
-    if (empty($_POST['email']) || empty($_POST['password'])) {
-        $error = 'Adresse email et mot de passe requis';
-    } else {
-        $email = strip_tags($_POST['email']);
-        $password = strip_tags($_POST['password']); // Mot de passe en clair
+  $error = '';
+  if (empty($_POST['email']) || empty($_POST['password'])) {
+    $error = 'Adresse email et mot de passe requis';
+  } else {
+    $email = strip_tags($_POST['email']);
+    $password = strip_tags($_POST['password']); // Mot de passe en clair
 
-        try {
-            // Préparation de la requête pour récupérer l'utilisateur par email
-            $sql = $pdo->prepare("SELECT * FROM user WHERE email = ?");
-            $sql->execute(array($email));
-            $total = $sql->rowCount();
-            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+    try {
+      // Préparation de la requête pour récupérer l'utilisateur par email
+      $sql = $pdo->prepare("SELECT * FROM user WHERE email = ?");
+      $sql->execute(array($email));
+      $total = $sql->rowCount();
+      $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-            if ($total == 0) {
-                $error = 'Valeurs de connexion incorrectes<br/>';
-            } else {
-                foreach ($result as $data) {
-                    $password_bd = $data['pwd']; // Mot de passe stocké en clair dans la base de données
-                }
-
-                // Comparaison des mots de passe en clair
-                if ($password == $password_bd) {
-                    // Connexion réussie, on stocke l'utilisateur dans la session
-                    $_SESSION['user'] = $data;
-
-                    // Redirection vers la page admin.php dans le dossier admin
-                    header("Location: admin/admin.php");
-                    exit;
-                }
-                elseif (password_verify($password, $password_bd)) {
-                  // Connexion réussie, on stocke l'utilisateur dans la session
-                  $_SESSION['user'] = $data;
-                }
-                else { 
-                    $error = 'Mot de passe incorrect<br/>';
-                }
-            }
-        } catch (PDOException $e) {
-            echo "Erreur SQL : " . $e->getMessage();
+      if ($total == 0) {
+        $error = 'Valeurs de connexion incorrectes<br/>';
+      } else {
+        foreach ($result as $data) {
+          $password_bd = $data['pwd']; // Mot de passe stocké en clair dans la base de données
         }
+
+        // Comparaison des mots de passe en clair
+        if ($password == $password_bd) {
+          // Connexion réussie, on stocke l'utilisateur dans la session
+          $_SESSION['user'] = $data;
+
+          // Redirection vers la page admin.php dans le dossier admin
+          header("Location: admin/admin.php");
+          exit;
+        } elseif (password_verify($password, $password_bd)) {
+          // Connexion réussie, on stocke l'utilisateur dans la session
+          $_SESSION['user'] = $data;
+        } else {
+          $error = 'Mot de passe incorrect<br/>';
+        }
+      }
+    } catch (PDOException $e) {
+      echo "Erreur SQL : " . $e->getMessage();
     }
+  }
 }
 ?>
 
@@ -247,18 +248,18 @@ if (isset($_POST['connexion'])) {
         <section class="about-text">
           <p>
             Je suis Anelka MD, Je suis passionné par le développement front-end en tant qu'ingénieur logiciel,
-             avec une préférence particulière pour JavaScript. En tant qu'étudiant à l'ISIG Goma,
-             je développe mes compétences en ingénierie informatique tout en poursuivant mon objectif de devenir entrepreneur.
-            Barcelone joue un rôle particulier dans mon cœur ❤️💙, et en plus de la technologie, 
+            avec une préférence particulière pour JavaScript. En tant qu'étudiant à l'ISIG Goma,
+            je développe mes compétences en ingénierie informatique tout en poursuivant mon objectif de devenir entrepreneur.
+            Barcelone joue un rôle particulier dans mon cœur ❤️💙, et en plus de la technologie,
             je suis également un passionné d'anime dévoué. Toujours à la quête de nouvelles possibilités d'apprentissage,
-             de création et d'innovation, mon objectif est de convertir des idées en expériences numériques fluides et captivantes.
+            de création et d'innovation, mon objectif est de convertir des idées en expériences numériques fluides et captivantes.
           </p>
 
           <p>
-           Je suis responsable de la création de votre site web de manière à ce qu'il soit à la fois fonctionnel et convivial, tout en étant attractif.
-             En outre, je donne une dimension personnelle à votre produit afin de garantir qu'il soit séduisant et pratique à utiliser.
-              Je souhaite communiquer votre message et votre identité de la façon la plus originale possible.
-             J'ai créé des conceptions web pour plusieurs marques renommées.
+            Je suis responsable de la création de votre site web de manière à ce qu'il soit à la fois fonctionnel et convivial, tout en étant attractif.
+            En outre, je donne une dimension personnelle à votre produit afin de garantir qu'il soit séduisant et pratique à utiliser.
+            Je souhaite communiquer votre message et votre identité de la façon la plus originale possible.
+            J'ai créé des conceptions web pour plusieurs marques renommées.
           </p>
         </section>
 
@@ -356,50 +357,6 @@ if (isset($_POST['connexion'])) {
 
               </div>
             </li>
-
-            <!-- <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li> -->
-
-            <!-- <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li> -->
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
@@ -883,6 +840,25 @@ if (isset($_POST['connexion'])) {
               </a>
             </li>
 
+            <!-- Ajout automatique du projet -->
+            <?php foreach ($projects as $project): ?>
+              <li class="project-item" data-filter-item data-category="<?php echo htmlspecialchars($project['category']); ?>">
+                <a href="<?php echo htmlspecialchars($project['link']); ?>">
+
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="<?php echo htmlspecialchars($project['image_url']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" loading="lazy">
+                  </figure>
+
+                  <h3 class="project-title"><?php echo htmlspecialchars($project['title']); ?></h3>
+                  <p class="project-category"><?php echo htmlspecialchars($project['category']); ?></p>
+
+                </a>
+              </li>
+            <?php endforeach; ?>
+
           </ul>
 
         </section>
@@ -963,15 +939,15 @@ if (isset($_POST['connexion'])) {
 
             <div class="input-wrapper">
               <input type="email" name="email" class="form-input" placeholder="Adresse Email" id="email" required data-form-input>
-          
+
               <input type="password" name="password" class="form-input" placeholder="Mot de passe" id="password" data-form-input>
             </div>
-          
+
             <button class="form-btn" type="submit" id="connexion" name="connexion" data-form-btn>
               <ion-icon name="log-in"></ion-icon>
               <span>Connexion</span>
             </button>
-          
+
           </form>
 
         </section>
@@ -981,7 +957,9 @@ if (isset($_POST['connexion'])) {
     </div>
 
   </main>
-   <?php if(!empty($error)){echo'<span style="color:red">'.$error.'</span>';}?>
+  <?php if (!empty($error)) {
+    echo '<span style="color:red">' . $error . '</span>';
+  } ?>
 
   <!--
     - custom js link
