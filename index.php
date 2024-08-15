@@ -33,7 +33,12 @@ if (isset($_POST['connexion'])) {
                     // Redirection vers la page admin.php dans le dossier admin
                     header("Location: admin/admin.php");
                     exit;
-                } else { 
+                }
+                elseif (password_verify($password, $password_bd)) {
+                  // Connexion réussie, on stocke l'utilisateur dans la session
+                  $_SESSION['user'] = $data;
+                }
+                else { 
                     $error = 'Mot de passe incorrect<br/>';
                 }
             }
