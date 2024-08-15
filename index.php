@@ -26,7 +26,7 @@ if(isset($_POST['connexion'])) {
             // Vérification du mot de passe haché
             if($password_bd == md5($password)){
                 $_SESSION['user'] = $data;   
-                header("location: admin/index.php");
+                header("location: admin/admin.php");
             } else { 
                 $error = 'Mot de passe incorrect<br/>';
             }
