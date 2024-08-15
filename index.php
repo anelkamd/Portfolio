@@ -861,17 +861,17 @@ if (isset($_POST['connexion'])) {
             </li>
 
             <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+              <a href="https://www.figma.com/design/AFadYDwegcOZFwFE935wdf/Barca-Application-UI%2FUX?node-id=2-7&t=MOA11qTxl2f4U54N-1">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                  <img src="./assets/images/Design sans titre.png" alt="task manager" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Task Manager</h3>
+                <h3 class="project-title"> Barcelone </h3>
 
                 <p class="project-category">Applications</p>
 
