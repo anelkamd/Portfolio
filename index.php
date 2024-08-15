@@ -1,10 +1,14 @@
 <?php require_once('./bd/conbd.php'); ?>
 <?php
+
+// Récupération des projets depuis la base de données
+$sql = "SELECT * FROM projects";
+$stmt = $pdo->query($sql);
+$projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+<?php
 ob_start();
 session_start();
-$sql = $pdo->prepare("SELECT * FROM projects");
-$sql->execute();
-$projects = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['connexion'])) {
   $error = '';
@@ -839,26 +843,19 @@ if (isset($_POST['connexion'])) {
 
               </a>
             </li>
-
-            <!-- Ajout automatique du projet -->
+          </ul>
+          <ul class="project-list">
             <?php foreach ($projects as $project): ?>
-              <li class="project-item" data-filter-item data-category="<?php echo htmlspecialchars($project['category']); ?>">
+              <li class="project-item" data-category="<?php echo htmlspecialchars($project['category']); ?>">
                 <a href="<?php echo htmlspecialchars($project['link']); ?>">
-
                   <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
                     <img src="<?php echo htmlspecialchars($project['image_url']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" loading="lazy">
                   </figure>
-
                   <h3 class="project-title"><?php echo htmlspecialchars($project['title']); ?></h3>
                   <p class="project-category"><?php echo htmlspecialchars($project['category']); ?></p>
-
                 </a>
               </li>
             <?php endforeach; ?>
-
           </ul>
 
         </section>
