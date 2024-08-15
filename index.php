@@ -3,37 +3,47 @@
 ob_start();
 session_start();
 
-if(isset($_POST['connexion'])) {
-    $error='';    
-    if(empty($_POST['email']) || empty($_POST['password'])) {
+if (isset($_POST['connexion'])) {
+    $error = '';    
+    if (empty($_POST['email']) || empty($_POST['password'])) {
         $error = 'Adresse email et mot de passe requis';
     } else {
         $email = strip_tags($_POST['email']);
         $password = strip_tags($_POST['password']);
 
-        $sql = $pdo->prepare("SELECT * FROM user WHERE email=?");
-        $sql->execute(array($email));
-        $total = $sql->rowCount();
-        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            // Préparation de la requête
+            $sql = $pdo->prepare("SELECT * FROM user WHERE email = ?");
+            $sql->execute(array($email));
+            $total = $sql->rowCount();
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-        if($total == 0) {
-            $error = 'Valeurs de connexion incorrectes<br/>';
-        } else {
-            foreach($result as $data) {
-                $password_bd = $data['pwd'];
-            }
+            if ($total == 0) {
+                $error = 'Valeurs de connexion incorrectes<br/>';
+            } else {
+                foreach ($result as $data) {
+                    $password_bd = $data['pwd'];
+                }
 
-            // Vérification du mot de passe haché
-            if($password_bd == md5($password)){
-                $_SESSION['user'] = $data;   
-                header("location: admin/admin.php");
-            } else { 
-                $error = 'Mot de passe incorrect<br/>';
+                // Vérification du mot de passe (modifiez selon votre méthode de hachage)
+                if (md5($password) == $password_bd) {
+                    // Connexion réussie, on stocke l'utilisateur dans la session
+                    $_SESSION['user'] = $data;
+
+                    // Redirection vers la page admin.php dans le dossier admin
+                    header("Location: admin/admin.php");
+                    exit;
+                } else { 
+                    $error = 'Mot de passe incorrect<br/>';
+                }
             }
+        } catch (PDOException $e) {
+            echo "Erreur SQL : " . $e->getMessage();
         }
     }
 }
 ?>
+
 
 
 
