@@ -1,5 +1,5 @@
 <?php require_once('./../bd/conbd.php'); ?>
 <?php 
 unset($_SESSION['user']);
-header("location: ./index.php");
+header("location: ../index.php");
 ?>

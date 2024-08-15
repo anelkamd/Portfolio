@@ -1610,7 +1610,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * CONTACT
+   * Admin
    */
 
   .input-wrapper { grid-template-columns: 1fr 1fr; }
@@ -1621,10 +1621,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
   
 }
-
-
-
-
 
 /**
  * responsive larger than 1024px screen

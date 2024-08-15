@@ -9,10 +9,10 @@ if (isset($_POST['connexion'])) {
         $error = 'Adresse email et mot de passe requis';
     } else {
         $email = strip_tags($_POST['email']);
-        $password = strip_tags($_POST['password']);
+        $password = strip_tags($_POST['password']); // Mot de passe en clair
 
         try {
-            // Préparation de la requête
+            // Préparation de la requête pour récupérer l'utilisateur par email
             $sql = $pdo->prepare("SELECT * FROM user WHERE email = ?");
             $sql->execute(array($email));
             $total = $sql->rowCount();
@@ -22,11 +22,11 @@ if (isset($_POST['connexion'])) {
                 $error = 'Valeurs de connexion incorrectes<br/>';
             } else {
                 foreach ($result as $data) {
-                    $password_bd = $data['pwd'];
+                    $password_bd = $data['pwd']; // Mot de passe stocké en clair dans la base de données
                 }
 
-                // Vérification du mot de passe (modifiez selon votre méthode de hachage)
-                if (md5($password) == $password_bd) {
+                // Comparaison des mots de passe en clair
+                if ($password == $password_bd) {
                     // Connexion réussie, on stocke l'utilisateur dans la session
                     $_SESSION['user'] = $data;
 
