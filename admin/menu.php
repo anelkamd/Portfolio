@@ -22,34 +22,31 @@ if (!isset($_SESSION['user'])) {
 
 </head>
 <style>
-    /* Conteneur principal */
-.container {
-    display: flex;
-    height: 100vh;
-    background-color: #f4f4f4;
+ /* Conteneur principal */
+#__next {
+    font-family: Arial, sans-serif;
 }
 
-/* Barre latérale (sidebar) */
-.sidebar {
-    width: 250px;
+/* Barre de navigation (navbar) */
+.navbar {
     background-color: #2d3748;
-    color: white;
+    padding: 15px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
-.sidebar-content {
-    padding: 20px;
-}
-
-/* Navigation dans la barre latérale */
+/* Navigation */
 .nav-links {
     display: flex;
-    flex-direction: column;
     gap: 20px;
 }
 
+/* Liens de navigation */
 .nav-item {
     display: flex;
     align-items: center;
@@ -77,18 +74,18 @@ if (!isset($_SESSION['user'])) {
 }
 
 /* Contenu principal */
-/* .main-content {
-    flex: 1;
+.main-content {
     padding: 20px;
     background-color: #ffffff;
     overflow-y: auto;
 }
 
- Contenu de la zone principale 
+/* Contenu de la zone principale */
 .content-area {
     max-width: 1200px;
     margin: 0 auto;
-} */
+}
+
 
 </style>
 <div id="__next">

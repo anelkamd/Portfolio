@@ -22,11 +22,11 @@ if (isset($_POST['connexion'])) {
                 $error = 'Valeurs de connexion incorrectes<br/>';
             } else {
                 foreach ($result as $data) {
-                    $password_bd = $data['pwd']; // Mot de passe stocké en clair dans la base de données
+                    $password_bd = $data['pwd']; // Mot de passe haché stocké dans la base de données
                 }
 
-                // Comparaison des mots de passe en clair
-                if ($password == $password_bd) {
+                // Utilisation de password_verify pour comparer le mot de passe en clair avec le mot de passe haché
+                if (password_verify($password, $password_bd)) {
                     // Connexion réussie, on stocke l'utilisateur dans la session
                     $_SESSION['user'] = $data;
 
@@ -43,6 +43,8 @@ if (isset($_POST['connexion'])) {
     }
 }
 ?>
+
+
 
 
 
