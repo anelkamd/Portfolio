@@ -91,7 +91,7 @@ if (!isset($_SESSION['user'])) {
 <div id="__next">
     <div class="navbar">
         <nav class="nav-links">
-            <a href="index.php" class="nav-item">
+            <a href="../index.php" class="nav-item">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
