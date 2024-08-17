@@ -735,7 +735,7 @@ if (isset($_POST['connexion'])) {
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="Designe Web">
+            <li class="project-item  active" data-filter-item data-category="designe Web">
               <a href="https://www.figma.com/design/ab15892ym08XoOT20Ujdg7/Crampo-Nike-Landing-Page?node-id=3-2&t=9kDwMrGL9xvCWbdO-1">
 
                 <figure class="project-img">
@@ -753,7 +753,7 @@ if (isset($_POST['connexion'])) {
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="Designe Web">
+            <li class="project-item  active" data-filter-item data-category="designe Web">
               <a href="https://www.figma.com/design/BukDwvq70ogPB358xX8lK4/Portfolio-Website-(Community)?node-id=0-1&t=9kDwMrGL9xvCWbdO-1">
 
                 <figure class="project-img">
@@ -771,7 +771,7 @@ if (isset($_POST['connexion'])) {
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="Designe Web">
+            <li class="project-item  active" data-filter-item data-category="designe Web">
               <a href="https://www.figma.com/design/DrWPd7EcypkaBUwrEmPnIO/Shop-IPad-pro?t=k1x9DpQX11GRua2R-1">
 
                 <figure class="project-img">
