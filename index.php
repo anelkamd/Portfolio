@@ -753,7 +753,7 @@ if (isset($_POST['connexion'])) {
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="designe Web">
+            <li class="project-item  active" data-filter-item data-category="Designe Web">
               <a href="https://www.figma.com/design/BukDwvq70ogPB358xX8lK4/Portfolio-Website-(Community)?node-id=0-1&t=9kDwMrGL9xvCWbdO-1">
 
                 <figure class="project-img">
