@@ -718,7 +718,7 @@ if (isset($_POST['connexion'])) {
               </li>
 
               <li class="select-item">
-                <button data-select-item>Designe Web</button>
+                <button data-select-item>DesigneWeb</button>
               </li>
 
               <li class="select-item">
@@ -735,7 +735,7 @@ if (isset($_POST['connexion'])) {
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="designe Web">
+            <li class="project-item  active" data-filter-item data-category="designeWeb">
               <a href="https://www.figma.com/design/ab15892ym08XoOT20Ujdg7/Crampo-Nike-Landing-Page?node-id=3-2&t=9kDwMrGL9xvCWbdO-1">
 
                 <figure class="project-img">
