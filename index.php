@@ -578,7 +578,7 @@ if (isset($_POST['connexion'])) {
               <span>2022 — 2023</span>
 
               <p class="timeline-text">
-                Conception des Designe des Sites
+                Formation en Conception des Designe des Sites
               </p>
 
             </li>
@@ -590,7 +590,7 @@ if (isset($_POST['connexion'])) {
               <span>2023 — 2024</span>
 
               <p class="timeline-text">
-                Conception des modele 3D pour les Sites web dinamique !!
+                Formation en Conception des modele 3D pour les Sites web dinamique !!
               </p>
 
             </li>
