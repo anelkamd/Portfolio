@@ -647,12 +647,12 @@ if (isset($_POST['connexion'])) {
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">20%</data>
+                <h5 class="h5">Developpement desktop</h5>
+                <data value="50">45%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 20%;"></div>
+                <div class="skill-progress-fill" style="width: 45%;"></div>
               </div>
 
             </li>
