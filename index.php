@@ -622,11 +622,11 @@ if (isset($_POST['connexion'])) {
 
               <div class="title-wrapper">
                 <h5 class="h5">Developpement Web</h5>
-                <data value="70">70%</data>
+                <data value="70">800%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+                <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
 
             </li>
